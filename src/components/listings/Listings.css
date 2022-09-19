@@ -1,11 +1,73 @@
-.listings{
+.listings {
     display: flex;
     flex-direction: column;
     margin: 3rem;
+    font-size: 1.5rem;
 }
-.listing{
-    background-color: rgb(228, 199, 255);
-    border: 1px dotted darkmagenta ;
+
+.listing {
     padding: 0.7rem;
     margin: 0.5rem 0;
+    border: 1px solid black;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgb(9, 8, 8);
+    background-color: rgba(36, 35, 35, 0.706);
+    margin: 5%;
+    font-weight: bolder;
+
+}
+
+.listingForm__title {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    font-style: oblique;
+    font-size: 3rem;
+
+}
+
+.listingForm {
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 1px solid black;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgb(9, 8, 8);
+    background-color: rgba(36, 35, 35, 0.706);
+    margin: 10%;
+    font-weight: bolder;
+}
+
+.listing_header{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}
+.listing_object{
+    font-weight: normal;
+}
+.object_label{
+    font-weight: bolder;
+}
+
+.full_form{
+    font-size: 1.4rem;
+}
+.locationLabel{
+    margin-right: 100%;
+}
+
+.selectLocation,
+.selectFrequency {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+    
+}
+.form__button{
+   font-weight: bolder;
+   color: rgb(4, 103, 10);
+   font-size: 1rem;
 }

@@ -14,10 +14,12 @@ export const GrassWorks = () => {
 		<Route path="/register" element={<Register />} />
 
 		<Route path="*" element={
-			<Authorized>
+			<Authorized >
 				<>
+					
                     <NavBar />
 					<ApplicationViews />
+					
 				</>
 			</Authorized>
 

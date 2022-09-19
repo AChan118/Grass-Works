@@ -4,7 +4,11 @@ import "./NavBar.css"
 export const CustomerNav = () => {
     const navigate = useNavigate()
 
-    return (
+    return (<>
+        <header className="head__nav">
+            <h1 class="logo">Logo</h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+            <nav>
         <ul className="navbar">
               <li className="navbar__item active">
                 <Link className="navbar__link" to="login/home">Home</Link>
@@ -13,11 +17,13 @@ export const CustomerNav = () => {
                 <Link className="navbar__link" to="/ticket/create">Create-A-Listing</Link>
             </li>
             <li className="navbar__item active">
+                <Link className="navbar__link" to="/tickets">MY-Listings</Link>
+            </li>
+            
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/profile"> My-Profile</Link>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/tickets">Listings</Link>
-            </li>
+            
             {/* <li className="navbar__item active">
                 <Link className="navbar__link" to="/profile">Profile</Link>
             </li> */}
@@ -33,5 +39,10 @@ export const CustomerNav = () => {
                     : ""
             }
         </ul>
+        </nav>
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                </label>
+        </header></>
     )
 }

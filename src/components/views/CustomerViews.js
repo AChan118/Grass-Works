@@ -13,8 +13,11 @@ export const CustomerViews = () => {
         <Routes>
             <Route path="/" element={
                 <>
+                    <div className="page__allTop">
                     <h1>GRASSWORKS</h1>
                     <div>A Simple Way To Get Yard Proffessionals</div>
+                    </div>
+
 
                     <Outlet />
                 </>

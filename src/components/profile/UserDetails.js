@@ -21,7 +21,7 @@ export const UserDetails = () => {
     )
     return <>
             <section className="provider">
-                <h1 className="detailsBanner">YOUR PROVIDER DETAILS</h1>
+                <h1 className="detailsBanner">YOUR ACCOUNT DETAILS</h1>
                     <header className="provider__header">{user.fullName}</header>
                         <div>Email: {user.email}</div>
                         <div>Address: {user.address}</div>

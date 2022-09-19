@@ -8,19 +8,22 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: 'Lora', serif;  
+  color: #ddf227;
+  font-family: 'Lora', serif;
   font-size: 14px;
   line-height: 1.5;
 }
 
-body {
-    padding: 0 3rem;
-}
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lora', serif;
-      letter-spacing: 2px;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lora', serif;
+  letter-spacing: 2px;
 }
 
 p {
@@ -29,4 +32,28 @@ p {
 
 .title--main {
   margin-block-end: 0;
+}
+
+.page__allTop {
+  padding-top: 10vh;
+ 
+}
+
+body {
+  margin: 0;
+  background-image: url(https://www.miltonandking.com/wp-content/uploads/2018/10/Wallpaper-Kemra-ArtificialTurf-1.jpg);
+  background-position: center;
+  background-color: rgba(44, 255, 44, 0.401);
+  background-blend-mode: multiply;
+  background-size: cover;
+  
+  place-items: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.content {
+  height: 200vh;
+
+
 }

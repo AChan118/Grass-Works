@@ -85,7 +85,8 @@ export const ListingForm = () => {
     return (
         <form className="listingForm">
             <h2 className="listingForm__title">New Service Listing</h2>
-            <fieldset>
+           <div className="full_form">
+            <fieldset className="textFieldset_form">
                 <div className="form-group">
                     <label htmlFor="address">Address:</label>
                     <input
@@ -102,8 +103,6 @@ export const ListingForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
-            <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
                     <input
@@ -138,7 +137,7 @@ export const ListingForm = () => {
             </div>
             </fieldset>
 
-            <fieldset className="selectLocation"> 
+            <fieldset className="select__formGroup"><div className="selectLocation"> 
             <label class="locationLabel" htmlFor="location">City:</label>
             {
                 locations.map(
@@ -161,8 +160,8 @@ export const ListingForm = () => {
             
             
             }
-        </fieldset>
-        <fieldset class="selectFrequency"> 
+        </div>
+        <div class="selectFrequency"> 
             <label class="locationLabel" htmlFor="frequency">How Often:</label>
             {
                 frequencies.map(
@@ -185,11 +184,11 @@ export const ListingForm = () => {
             
             
             }
-        </fieldset>
+        </div></fieldset></div>
             
-            <button
+            <button href="#"
             onClick = {(clickEvent)=> handleSaveButtonClick(clickEvent)}
-            className="btn btn-primary">
+            className="form__button">
                 Submit Listing
             </button>
         </form>
