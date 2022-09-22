@@ -1,3 +1,4 @@
+import { GiGrass } from "react-icons/gi"
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 
@@ -6,7 +7,7 @@ export const CustomerNav = () => {
 
     return (<>
         <header className="head__nav">
-            <h1 class="logo">Logo</h1>
+            <h1 class="logo"><GiGrass />GRASSWORKS</h1>
             <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
             <nav>
         <ul className="navbar">

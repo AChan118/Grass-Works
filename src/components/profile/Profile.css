@@ -1,0 +1,185 @@
+/* .detail_property{
+    font-size: 1.5rem;
+   
+}
+.detail_label{
+    font-weight: bolder;
+}
+.provider{
+    display: flex;
+  
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 1px solid black;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgb(9, 8, 8);
+    background-color: rgba(36, 35, 35, 0.706);
+    margin: 5%;
+    font-weight: bolder;
+
+}
+.provider__detailsName{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+
+    
+}
+.proDetails_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.provider__detailsName{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #EAE1DF;
+
+    
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+    font-size: 1.7rem;
+    padding:15px
+}
+.edit_field{
+    margin: 0;
+    min-width: 30%;
+}
+.feedback{
+    font-size: 2rem;
+    color: #545E56;
+    font-weight: bold;
+    font-style: oblique;
+    margin: 2rem;
+    transition: 200ms;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a5e600, 0 0 40px #ade600, 0 0 50px #d3e600, 0 0 60px #cbe600, 0 0 70px #d3e600;
+
+}
+
+/* card css */
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+    
+    --fw-normal: 400;
+    --fw-bold: 700;
+    
+    --clr: #cbeec5;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+ 
+  
+  .provider {
+    
+    width: 400px;
+    
+  }
+  
+  .provider__content {
+    text-align: center;
+    position: relative;
+    padding: 15em 5em;
+    transition: transform 2.5s;
+    background: pink;
+    transform-style: preserve-3d;
+    border-radius: 1rem;
+  }
+  
+  .provider:hover .provider__content {
+    transform: rotateY(.5turn);
+  }
+  
+  .front_details,
+  .back_details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5em 3em;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: grid;
+    align-content: center;
+  }
+  
+  .front_details {
+    background-color: var(--clr);
+    background-image: url(https://media.istockphoto.com/photos/majestic-sunset-seen-in-late-spring-showing-a-recently-cut-and-well-picture-id667107666?k=20&m=667107666&s=612x612&w=0&h=KfIQgX3xP5z-BBJT3LM8Hebd8zV1fLLLCWOj-aaxc-o=);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #667761;
+    border-radius: 1rem;
+  }
+  
+  .front_details::before {
+    content: '';
+    position: absolute;
+    --spacer: 1em;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border: 3px solid currentColor;
+    transform: var(--level-one);
+  }
+  
+  .detailsBanner {
+    font-size: 3.5rem;
+    transform: var(--level-three);
+    order: 2;
+    text-transform: uppercase;
+  }
+  
+  /* .card__subtitle {
+    transform: var(--level-two);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    font-weight: var(--fw-bold);
+    opacity: .7;
+  } */
+  
+  .detail_body {
+    transform: var(--level-two);
+    font-weight: var(fw-normal);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #EAE1DF;
+    
+  }
+  
+  
+  
+  .back_details {
+    transform: rotateY(.5turn);
+    color: var(--clr);
+    
+    background-position: center;
+    background-color: rgb(145, 124, 120);
+    background-blend-mode: overlay;
+    background-size: cover;
+    
+    border-radius: 1rem;
+    
+  }
+  .full_proCard{
+    display: flex;
+    justify-content: center;
+
+  }

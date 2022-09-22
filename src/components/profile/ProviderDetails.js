@@ -18,19 +18,26 @@ export const ProviderDetails = () => {
         },
         []
     )
-    return <>
-            <section className="provider">
-                <h1 className="detailsBanner">YOUR PROVIDER DETAILS</h1>
-                    <header className="provider__header">{provider?.user?.fullName}</header>
-                        <div>Email: {provider?.user?.email}</div>
-                        <div>Address: {provider?.user?.address}</div>
-                        <div>Location: {provider?.location?.city}</div>
-                        <div>Phone Number: {provider?.user?.phoneNumber}</div>
-                        <div>Rate: {provider.payRate}</div>
-
-            </section>
-                {
-                    ProviderForm()
-                }
-            </>
+    return <><div className="full_proCard">
+        <section className="provider">
+            <div class="provider__content">
+                <div className="front_details">
+                    <h1 className="detailsBanner">YOUR PROVIDER DETAILS</h1>
+                </div>
+                <section className="back_details">
+                    <div className="provider__detailsName">{provider?.user?.fullName}</div>
+                    <section className="detail_body">
+                        <div className="detail_property"><label className="detail_label">Email:</label> {provider?.user?.email}</div>
+                        <div className="detail_property"><label className="detail_label">Address: </label>{provider?.user?.address}</div>
+                        <div className="detail_property"><label className="detail_label">Location: </label>{provider?.location?.city}</div>
+                        <div className="detail_property"><label className="detail_label">Phone Number: </label>{provider?.user?.phoneNumber}</div>
+                        <div className="detail_property"><label className="detail_label">Rate: </label>{provider.payRate}</div>
+                    </section>
+                </section>
+            </div>
+        </section></div>
+        {
+            ProviderForm()
+        }
+    </>
 }

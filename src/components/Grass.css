@@ -8,7 +8,7 @@ button,
 input,
 select,
 textarea {
-  color: #ddf227;
+  color: #545E56;
   font-family: 'Lora', serif;
   font-size: 14px;
   line-height: 1.5;
@@ -41,11 +41,11 @@ p {
 
 body {
   margin: 0;
-  background-image: url(https://www.miltonandking.com/wp-content/uploads/2018/10/Wallpaper-Kemra-ArtificialTurf-1.jpg);
   background-position: center;
-  background-color: rgba(44, 255, 44, 0.401);
+  background-color: rgb(234, 225, 223);
   background-blend-mode: multiply;
   background-size: cover;
+  
   
   place-items: center;
   font-family: 'Work Sans', sans-serif;
@@ -57,3 +57,16 @@ body {
 
 
 }
+/* body {
+  margin: 0;
+  background-image: url(https://www.miltonandking.com/wp-content/uploads/2018/10/Wallpaper-Kemra-ArtificialTurf-1.jpg);
+  background-position: center;
+  background-color: rgba(44, 255, 44, 0.401);
+  background-blend-mode: multiply;
+  background-size: cover;
+  
+  
+  place-items: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+} */

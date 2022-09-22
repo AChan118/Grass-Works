@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+
 import "./Login.css"
 
 export const Login = () => {
@@ -30,7 +31,8 @@ export const Login = () => {
 
     return (
         <main className="container--login">
-            <section>
+            <section className="login_body">
+                
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1 className="signIn_head">GRASSWORKS</h1>
                     <h2 className="sign_in">Please sign in</h2>

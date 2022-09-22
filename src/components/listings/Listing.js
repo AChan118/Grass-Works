@@ -110,7 +110,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
                     : <Link to={`/listings/${listingObject.id}/edit`}>Listing {listingObject.id}</Link>
             }
         </header>
-        <section className="listing">
+        <section className="listing_details">
         <article className="listing_object"><label className="object_label">Description:</label> {listingObject.description}</article>
             <article className="listing_object"><label className="object_label">Scheduled For: </label>{listingObject?.scheduledDate}</article>
             <article className="listing_object"><label className="object_label">Price: $</label>{myAssignedListing ? listingObject.acreage * myAssignedListing?.provider?.payRate : 0}</article>

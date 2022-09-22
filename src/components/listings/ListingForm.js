@@ -82,13 +82,14 @@ export const ListingForm = () => {
             })
     }
 
-    return (
+    return (<>
+        <div className="page__allTop"></div>
         <form className="listingForm">
             <h2 className="listingForm__title">New Service Listing</h2>
            <div className="full_form">
             <fieldset className="textFieldset_form">
-                <div className="form-group">
-                    <label htmlFor="address">Address:</label>
+                <div className="form-groupNew">
+                    <label className="formLabels" htmlFor="address">Address:</label>
                     <input
                         required autoFocus
                         type="text"
@@ -103,8 +104,8 @@ export const ListingForm = () => {
                             }
                         } />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="description">Description:</label>
+                <div className="form-groupNew">
+                    <label className="formLabels" htmlFor="description">Description:</label>
                     <input
                         required autoFocus
                         type="text"
@@ -119,8 +120,8 @@ export const ListingForm = () => {
                             }
                         } />
                 </div>
-                <div className="form-group">
-                <label htmlFor="serviceAcre">Acreage:</label>
+                <div className="form-groupNew">
+                <label className="formLabels" htmlFor="serviceAcre">Acreage:</label>
                 <input
                     required autoFocus
                     type="number"
@@ -192,5 +193,5 @@ export const ListingForm = () => {
                 Submit Listing
             </button>
         </form>
-    )
+    </>)
 }

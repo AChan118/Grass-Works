@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-    --background: rgba(19, 113, 0, 0.85);
+    --background: rgba(84,94,86, 0.85);
   }
   
   *, *::before, *::after {
@@ -13,11 +13,15 @@
   /* navigation styles*/
   
   .head__nav {
+    display: flex;
+    justify-content: space-around;
     background: var(--background);
     text-align: center;
     position: fixed;
     z-index: 999;
     width: 100%;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(9, 8, 8, 0.452);
+    border-radius: .25rem;
     
   }
   
@@ -111,11 +115,17 @@
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
   }
+  .logo{
+    color:#EAE1DF ;
+    font-size: 1.5rem;
+    padding-left: .6rem;
+}
   
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1019px) {
     .nav-toggle-label {
       display: none;
     }
+
   
     header {
       display: grid;
@@ -162,7 +172,7 @@
     nav a::before {
       content: '';
       display: block;
-      height: 5px;
+      height: 7px;
       background: rgb(221,242,39);
       position: absolute;
       bottom: -.75em;
@@ -175,4 +185,19 @@
     nav a:hover::before {
       transform: scale(1,1);
     }
+    .logo{
+        color:#EAE1DF ;
+        font-size: 2.6rem;
+    }
   }
+
+  @media screen and (min-width: 300px) {
+    
+    .logo{
+        color:#EAE1DF ;
+        font-size: 2rem;
+    }
+  }
+    
+
+    

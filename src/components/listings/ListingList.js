@@ -89,6 +89,9 @@ export const ListingList = () => {
     )
 
     return <>
+    <div className="page__allTop"></div>
+    <div className="listings_top">
+    <h1 className="listings_title">ALL MY LISTINGS</h1>
         {
             grassUserObject.provider
                 ? <>
@@ -96,14 +99,14 @@ export const ListingList = () => {
                     <button onClick={() => updateOpenOnly(false)}>All My Listings</button>
                 </>
                 : <>
-                   <button onClick={() => navigate("/ticket/create")}>Create Ticket</button>
+                   <button className="createListing_listings" onClick={() => navigate("/ticket/create")}>Create A New Listing</button>
                     
                     {/* <button onClick={() => updateOpenOnly(false)}>All My Tickets</button> */}
                 </>
         }
 
 
-        <h2>ALL MY LISTINGS</h2>
+        </div>
         <article className="listings">
             {
                 filteredListings.map(

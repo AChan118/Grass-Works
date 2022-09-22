@@ -1,7 +1,7 @@
 
 import { ProviderDetails } from "./ProviderDetails"
 import { UserDetails } from "./UserDetails"
-
+import "./Profile.css"
 
 
 export const Profile = () => {

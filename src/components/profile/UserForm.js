@@ -39,7 +39,7 @@ export const UserForm =() => {
         })
             .then(response => response.json())
             .then(() => {
-                setFeedback("Customer profile successfully saved")
+                setFeedback("Account details successfully saved")
             })
     
     }
@@ -54,12 +54,13 @@ useEffect(() => {
 
     return (
         <>
+        <form className="profile">
         <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
         {feedback}
         </div>
-        <form className="profile">
-            <h2 className="profile__title">Change Your Profile</h2>
-            <fieldset>
+        
+            <h2 className="profile__title">Edit Your Profile</h2>
+            <fieldset className="edit_field">
                 <div className="form-group">
                     <label htmlFor="address">Address:</label>
                     <input
@@ -75,8 +76,6 @@ useEffect(() => {
                             }
                         } />
                 </div>
-            </fieldset>
-            <fieldset>
                 <div className="form-group">
                     <label htmlFor="phoneNumber">Phone Number:</label>
                     <input type="imput"
