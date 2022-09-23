@@ -10,6 +10,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
         assignedProvider = providers.find(provider => provider.id === listingProviderRelationship.providerId)
     }
 
+
     //find the employee profile object for current user
 
     const userProvider = providers.find(provider => provider.userId === currentUser.id)
@@ -21,7 +22,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
 
     const canClose = () => {
         if (userProvider?.id === assignedProvider?.id && listingObject.dateCompleted === "") {
-            return <button onClick={closeListing} className="listing__finish">Complete Listing</button>
+            return <button onClick={closeListing} className="listing__button"><span></span>Complete Listing</button>
         }
         else {
             return ""
@@ -39,7 +40,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
                         getAllListings()
                     })
 
-            }} className="listing__delete" > Cancel Listing</button >
+            }} className="listing__button" > <span></span>Cancel Listing</button >
         }
         else {
             return ""
@@ -72,7 +73,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
     const buttonOrNoButton = () => {
 
         if (currentUser.provider) {
-            return <button
+            return <button className="listing__button"
                 onClick={() => {
                     fetch(`http://localhost:8088/assignedListings`, {
                         method: "Post",
@@ -93,7 +94,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
                 }
 
                 }
-            >Claim Listing</button>
+            ><span></span>Claim Listing</button>
         }
         else {
             return ""
@@ -103,22 +104,31 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
 
 
     return <section className="listing" key={`listing--${listingObject.id}`} >
-        <header className="listing_header">
-            {
+        <header className="listing_header">My Listing</header>
+           <div className="listing_number"> {
                 currentUser.provider
                     ? `Listing ${listingObject.id}`
-                    : <Link to={`/listings/${listingObject.id}/edit`}>Listing {listingObject.id}</Link>
+                    : `Listing #${listingObject.id}`
             }
-        </header>
+        </div>
         <section className="listing_details">
-        <article className="listing_object"><label className="object_label">Description:</label> {listingObject.description}</article>
-            <article className="listing_object"><label className="object_label">Scheduled For: </label>{listingObject?.scheduledDate}</article>
-            <article className="listing_object"><label className="object_label">Price: $</label>{myAssignedListing ? listingObject.acreage * myAssignedListing?.provider?.payRate : 0}</article>
+            <article className="listing_object">
+                <label className="object_label">Description:</label>
+                {listingObject.description}
+            </article>
+            <article className="listing_object">
+                <label className="object_label">Scheduled For: </label>
+                {listingObject.scheduledDate ? listingObject?.scheduledDate : "Completed"}
+            </article>
+            <article className="listing_object">
+                <label className="object_label">Price: </label>
+                {myAssignedListing ? `$${listingObject.acreage * myAssignedListing?.provider?.payRate}` : "Not Assigned Currently"}
+            </article>
         </section>
         <footer>
             {
                 listingObject.assignedListings.length
-                    ? `Currently being worked on by ${assignedProvider !== null ? assignedProvider?.user.fullName : ""}`
+                    ? listingObject.scheduledDate ? `Currently being worked on by ${assignedProvider !== null ? assignedProvider?.user.fullName : ""}` : "Completed"
                     : buttonOrNoButton()
             }
             {

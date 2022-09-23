@@ -6,6 +6,9 @@ import videoBg from '../assets/videoBg.mp4'
 import "./Home.css"
 
 export const HomeHTML = () => {
+
+    const localGrassUser = localStorage.getItem("grass_user")
+    const grassUserObject = JSON.parse(localGrassUser)
     const navigate = useNavigate()
     return <>
         <div className="aboutUs">
@@ -14,8 +17,21 @@ export const HomeHTML = () => {
             <video src={videoBg} autoPlay loop muted/>
             <div className='home_content'>
                     <h1 className='home_title'>GRASSWORKS</h1>
+                    
+                    {
+            grassUserObject.provider
+                ? <>
+                     <p className='home_text'>A simple way to claim new service listings in your area and to manage your customers information. </p>
+                     <button className="createListing_home" onClick={() => navigate("/tickets")}> <span></span>Start Claiming</button>
+                </>
+                : <>
                     <p className='home_text'>A Simple Way To Hire Yard Proffessionals</p>
-                    <button className='createListing_home' onClick={() => navigate("/ticket/create")}>Create A Listing</button>
+                   <button className="createListing_home" onClick={() => navigate("/ticket/create")}> <span></span>Create A Listing</button>
+                    
+                    {/* <button onClick={() => updateOpenOnly(false)}>All My Tickets</button> */}
+                </>
+        }
+                   
             </div>
         </div>
     </>

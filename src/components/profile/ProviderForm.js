@@ -72,7 +72,7 @@ useEffect(() => {
         <form className="profile">
             <h2 className="profile__title">Update Your Provider Details</h2>
            
-            <fieldset>
+            <fieldset className="edit_field">
                 <div className="form-group">
                     <label htmlFor="payRate">Acrage Rate:</label>
                     <input type="number"
@@ -113,8 +113,8 @@ useEffect(() => {
         </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
-                Save Profile
+                className="listing__button">
+                <span></span>Save Profile
             </button>
         </form></>
     )

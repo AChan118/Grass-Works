@@ -7,7 +7,7 @@ export const ProviderNav = () => {
 
     return (<>
         <header className="head__nav">
-            <h1 className="logo"><GiGrass /> Logo</h1>
+            <h1 className="logo"><GiGrass /> GRASSWORKS</h1>
             <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
                 <nav>
                     <ul className="navbar">

@@ -11,7 +11,8 @@ export const ListingForm = () => {
             description: "",
             locationId: (0),
             acreage: (0),
-            frequencyId: (0)
+            frequencyId: (0),
+            dateCompleted:""
     })
 
     const [locations, updateLocations] = useState([])
@@ -62,9 +63,11 @@ export const ListingForm = () => {
             userId: grassUserObject.id,
             address: listing.address,
             description: listing.description,
+            scheduledDate: listing.scheduledDate,
             locationId: listing.locationId,
             acreage: listing.acreage,
-            frequencyId: listing.frequencyId
+            frequencyId: listing.frequencyId,
+            dateCompleted:""
 
             
         }
@@ -136,6 +139,22 @@ export const ListingForm = () => {
                         }
                     } />
             </div>
+            <div className="form-groupNew">
+                <label className="formLabels" htmlFor="serviceAcre">Date Needed:</label>
+                <input
+                    required autoFocus
+                    type="date"
+                    className="form-control"
+                    
+                    value={listing.scheduledDate}
+                    onChange={
+                        (evt) => {
+                            const copy = {...listing}
+                            copy.scheduledDate = evt.target.value
+                            update(copy)
+                        }
+                    } />
+            </div>
             </fieldset>
 
             <fieldset className="select__formGroup"><div className="selectLocation"> 
@@ -189,7 +208,7 @@ export const ListingForm = () => {
             
             <button href="#"
             onClick = {(clickEvent)=> handleSaveButtonClick(clickEvent)}
-            className="form__button">
+            className="form__button"><span></span>
                 Submit Listing
             </button>
         </form>

@@ -45,7 +45,7 @@
     padding: 3rem;
     border-radius: 0.5rem;
     box-shadow: 0.5rem 0.5rem 1rem rgba(9, 8, 8, 0.452);
-    background-color: rgba(183,148,146, 0.456);
+    background-color: rgba(183, 148, 146, 0.718);
     margin: 10%;
     font-weight: bolder;
 }
@@ -78,16 +78,33 @@
     margin: 1rem;
     
 }
-.form__button{
+.form__button, .listing__button{
    font-weight: bolder;
-   background-color: rgba(84,94,86, 0.85);
+   background-color: rgba(84, 94, 86, 0.678);
     border-radius: .5rem;
     border: solid rgb(96, 93, 93) 2px;
     margin-top: 1rem;
     font-size: 1rem;
     padding: .75rem;
-    box-shadow: .5rem 0.5rem .75rem rgba(9, 8, 8, 0.452);
+    box-shadow: .25rem 0.25rem .95rem rgba(9, 8, 8, 0.452);
     color: #EAE1DF ;
+    position: relative;
+    z-index: 1;
+}
+.form__button span, .listing__button span{
+    width: 0%;
+    height: 100%;
+    border-radius: .5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #545e56ad;
+    z-index: -1;
+    transition: 155ms ;
+}
+.form__button:hover span, .listing__button:hover span{
+    width: 100%;
+    box-shadow: .5rem 0.5rem .75rem rgba(9, 8, 8, 0.452);
 }
 .listings_top{
     display: flex;
@@ -95,7 +112,7 @@
     justify-content: center;
     align-items: center;
 }
-.createListing_listings{
+.createButton_listings{
     background-color: rgba(84,94,86, 0.85);
     border-radius: .5rem;
     border: solid rgb(96, 93, 93) 2px;
@@ -104,7 +121,27 @@
     padding: .75rem;
     box-shadow: .5rem 0.5rem .75rem rgba(9, 8, 8, 0.452);
     color: #EAE1DF ;
+    position: relative;
+    z-index: 1;
 }
+
+.createButton_listings span{
+    width: 0%;
+    height: 100%;
+    border-radius: .5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #545e56ad;
+    z-index: -1;
+    transition: 0.35s ;
+}
+.createButton_listings:hover span{
+    width: 100%;
+}
+
+
+
 .formLabels{
     font-size: 2rem;
     margin: .5rem;
@@ -113,6 +150,38 @@
 .form-groupNew{
     margin-left: -4rem;
     
+}
+.provider_button{
+    background-color: rgba(84, 94, 86, 0.582);
+    border-radius: .5rem;
+    border: solid rgba(0, 0, 0, 0.386) 2px;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    padding: .75rem;
+    box-shadow: .25rem 0.25rem .5rem rgba(9, 8, 8, 0.524);
+    color: #EAE1DF ;
+    margin: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.provider_button span{
+    width: 0%;
+    height: 100%;
+    border-radius: .5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #545e56ad;
+    z-index: -1;
+    transition: 0.5s ;
+}
+.provider_button:hover span{
+    width: 100%;
+}
+.listing_number{
+    display: flex;
+    flex-direction: row-reverse;
 }
 
     @media screen and (min-width: 800px) {

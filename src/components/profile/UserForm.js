@@ -90,10 +90,10 @@ useEffect(() => {
                         } />
                 </div>
             </fieldset>
-            <button
+            <button 
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
-                Save Profile
+                className="listing__button">
+                <span></span>Save Profile
             </button>
         </form></>
     )
