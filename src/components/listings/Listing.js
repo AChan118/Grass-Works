@@ -50,6 +50,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
     //updates the ticket with a date complleted
 
     const closeListing = () => {
+        const d = new Date()
         const copy = {
             userId: listingObject.id,
             address: listingObject.address,
@@ -57,7 +58,7 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
             locationId: listingObject.locationId,
             acreage: listingObject.acreage,
             frequencyId: listingObject.frequencyId,
-            dateCompleted: new Date()
+            dateCompleted: d.toDateString()
         }
         return fetch(`http://localhost:8088/listings/${listingObject.id}`, {
             method: "PUT",
@@ -104,31 +105,60 @@ export const Listing = ({ listingObject, currentUser, providers, getAllListings,
 
 
     return <section className="listing" key={`listing--${listingObject.id}`} >
-        <header className="listing_header">My Listing</header>
-           <div className="listing_number"> {
+        <header className="listing_header">
+            {
+                myAssignedListing ? `My Listing` : `New Listing`
+            }
+        </header>
+        <div className="listing_number">
+            {
                 currentUser.provider
-                    ? `Listing ${listingObject.id}`
-                    : `Listing #${listingObject.id}`
+                    ? `Listing# ${listingObject.id}`
+                    : `Listing# ${listingObject.id}`
             }
         </div>
         <section className="listing_details">
+            
+            {
+                myAssignedListing
+                    ? <><article className="listing_object">
+                        <label className="object_label">Customer's Name: </label>
+                        {listingObject?.user.fullName}
+                    </article>
+                        <article className="listing_object">
+                            <label className="object_label">Customer's Phone Number: </label>
+                            {listingObject?.user.phoneNumber}
+                        </article></>
+                    : <>Claim for Customer Information
+                    <article className="listing_object">
+                        <label className="object_label">Acrage: </label>
+                        {listingObject.acreage}
+                    </article></>
+            }
+
             <article className="listing_object">
-                <label className="object_label">Description:</label>
+                <label className="object_label">Description: </label>
                 {listingObject.description}
             </article>
             <article className="listing_object">
-                <label className="object_label">Scheduled For: </label>
-                {listingObject.scheduledDate ? listingObject?.scheduledDate : "Completed"}
+                <label className="object_label">Address: </label>
+                {listingObject.address}
+            </article>
+            <article className="listing_object">
+
+                {listingObject.scheduledDate
+                    ? <><label className="object_label">Scheduled For: </label> {listingObject?.scheduledDate} </>
+                    : ""}
             </article>
             <article className="listing_object">
                 <label className="object_label">Price: </label>
                 {myAssignedListing ? `$${listingObject.acreage * myAssignedListing?.provider?.payRate}` : "Not Assigned Currently"}
             </article>
         </section>
-        <footer>
+        <footer className="listing_footer">
             {
                 listingObject.assignedListings.length
-                    ? listingObject.scheduledDate ? `Currently being worked on by ${assignedProvider !== null ? assignedProvider?.user.fullName : ""}` : "Completed"
+                    ? listingObject.scheduledDate ? `Currently being worked on by ${assignedProvider !== null ? assignedProvider?.user.fullName : ""}` : `Completed on ${listingObject.dateCompleted}`
                     : buttonOrNoButton()
             }
             {

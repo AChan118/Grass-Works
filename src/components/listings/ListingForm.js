@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import CreateBg from '../assets/createBg.jpg'
 
 export const ListingForm = () => {
     /*
@@ -87,7 +88,13 @@ export const ListingForm = () => {
 
     return (<>
         <div className="page__allTop"></div>
+        <div className="body_create">
+        
+        <div className="create_left">
+                   <img src={CreateBg}/>
+                </div>
         <form className="listingForm">
+            
             <h2 className="listingForm__title">New Service Listing</h2>
            <div className="full_form">
             <fieldset className="textFieldset_form">
@@ -212,5 +219,6 @@ export const ListingForm = () => {
                 Submit Listing
             </button>
         </form>
+        </div>
     </>)
 }

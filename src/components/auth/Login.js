@@ -1,7 +1,10 @@
 import React, { useState } from "react"
+import { MdFacebook } from "react-icons/md";
+import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoTwitter } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-
+import imageBg from '../assets/imageBg.jpg'
 import "./Login.css"
 
 export const Login = () => {
@@ -31,13 +34,17 @@ export const Login = () => {
 
     return (
         <main className="container--login">
+            
             <section className="login_body">
-                
+                <div className="login_left">
+                   <img src={imageBg}/>
+                </div>
+                <div className="login_right">
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1 className="signIn_head">GRASSWORKS</h1>
                     <h2 className="sign_in">Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"></label>
+                        <label htmlFor="inputEmail">Email</label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
@@ -46,15 +53,26 @@ export const Login = () => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="listing__button" type="submit"><span></span>
                             Sign in
                         </button>
                     </fieldset>
-                </form>
+               
+                <section className="link--register">
+                Not a member yet?
+                <Link to="/register">Sign Up</Link>
             </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+             </form>
+             <h3 className="social_loginHead">Login with your socials</h3>
+             <ul className="social_listLogin">
+                <li className="social_logoSignIn"><MdFacebook /></li>
+                <li className="social_logoSignIn"><IoLogoInstagram /></li>
+                <li className="social_logoSignIn"><IoLogoTwitter /></li>
+
+             </ul>
+                </div>
             </section>
+            
         </main>
     )
 }

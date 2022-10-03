@@ -20,7 +20,7 @@ export const ListingList = () => {
 
 
     const getAllListings = () => {
-        fetch(`http://localhost:8088/listings?_embed=assignedListings`)
+        fetch(`http://localhost:8088/listings?_expand=user&_embed=assignedListings`)
             .then(response => response.json())
             .then((listingArray) => {
                 setlistings(listingArray)

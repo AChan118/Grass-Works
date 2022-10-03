@@ -28,7 +28,7 @@ export const Register = (props) => {
                         provider: createdUser.isProvider
                     }))
 
-                    navigate("/")
+                    navigate("/login/home")
                 }
             })
     }
@@ -90,10 +90,10 @@ export const Register = (props) => {
                         setUser(copy)
                     }}
                         type="checkbox" id="isProvider" />
-                    <label htmlFor="email"> I am an employee </label>
+                    <label htmlFor="email"> I would like to be a provider </label>
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="listing__button" type="submit"><span></span> Register </button>
                 </fieldset>
             </form>
         </main>

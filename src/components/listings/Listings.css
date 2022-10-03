@@ -1,8 +1,11 @@
 .listings {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 3rem;
     font-size: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
 }
 
 .listing {
@@ -11,12 +14,24 @@
     border: 1px solid black;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0.5rem 0.5rem 1rem rgba(75, 69, 69, 0.652);
+    box-shadow: 0px 0px 15px -5px;
     background: rgb(183,148,146);
-    
+    width: 40%;
     margin: 5%;
     font-weight: bolder;
+    transition: .5s;
+    animation: ease-in-out;
 
+}
+.listing:hover .listing_details{
+    transform: scale(1.1); 
+    box-shadow: 0px 0px 15px 0px;
+    background: rgba(255, 255, 255, 0.149) ;
+}
+.listing:hover{
+    transform: scale(1.1); 
+    box-shadow: 0px 0px 30px 0px ;
+    
 }
 .listing_details{
     padding: 0.7rem;
@@ -24,8 +39,9 @@
     border: 1px solid black;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.193) ;
-
+    
+    transition: .5s;
+    animation: ease-in-out;
     margin: 5%;
 }
 
@@ -39,17 +55,76 @@
 }
 
 .listingForm {
+    
     padding: 0.7rem;
     margin: 0.5rem 0;
     border: 1px solid black;
     padding: 3rem;
     border-radius: 0.5rem;
-    box-shadow: 0.5rem 0.5rem 1rem rgba(9, 8, 8, 0.452);
+    
     background-color: rgba(183, 148, 146, 0.718);
-    margin: 10%;
-    font-weight: bolder;
-}
+    width: 50%;
+   
+    z-index: 1;
+    position: absolute;
 
+    
+    
+    font-weight: bolder;
+    transition: .5s;
+    animation: ease-in-out;
+
+}
+.listingForm:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px 0px black;
+    background-color: rgba(183, 148, 146, 0.914);
+
+
+}
+.create_left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+
+    
+}
+.create_left:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg,#a27169,#101e13);
+    z-index: 1;
+    mix-blend-mode: screen;
+    
+}
+.create_left img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.body_create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    
+    
+    
+}
+.page__allTop{
+    background: #EAE1DF;
+}
 .listing_header{
     display: flex;
     justify-content: center;
@@ -100,11 +175,12 @@
     left: 0;
     background: #545e56ad;
     z-index: -1;
-    transition: 155ms ;
+    transition: .3s ;
 }
 .form__button:hover span, .listing__button:hover span{
     width: 100%;
     box-shadow: .5rem 0.5rem .75rem rgba(9, 8, 8, 0.452);
+    
 }
 .listings_top{
     display: flex;
@@ -182,7 +258,13 @@
 .listing_number{
     display: flex;
     flex-direction: row-reverse;
+
 }
+.listing_footer{
+    display: flex;
+    flex-direction: column;
+}
+
 
     @media screen and (min-width: 800px) {
         .form-groupNew{
